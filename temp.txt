@@ -1,0 +1,14 @@
++--------+-----------+--------------------------+-------------------+------------------------------------------------------------+------------------------------------------+
+| Domain | Method    | URI                      | Name              | Action                                                     | Middleware                               |
++--------+-----------+--------------------------+-------------------+------------------------------------------------------------+------------------------------------------+
+|        | GET|HEAD  | api/bookables            | bookables.index   | App\Http\Controllers\Api\BookableController@index          | api                                      |
+|        | POST      | api/bookables            | bookables.store   | App\Http\Controllers\Api\BookableController@store          | api                                      |
+|        | GET|HEAD  | api/bookables/{bookable} | bookables.show    | App\Http\Controllers\Api\BookableController@show           | api                                      |
+|        | PUT|PATCH | api/bookables/{bookable} | bookables.update  | App\Http\Controllers\Api\BookableController@update         | api                                      |
+|        | DELETE    | api/bookables/{bookable} | bookables.destroy | App\Http\Controllers\Api\BookableController@destroy        | api                                      |
+|        | GET|HEAD  | api/bookables/{id}       |                   | App\Http\Controllers\Api\BookableController@show           | api                                      |
+|        | GET|HEAD  | api/user                 |                   | Closure                                                    | api                                      |
+|        |           |                          |                   |                                                            | App\Http\Middleware\Authenticate:sanctum |
+|        | GET|HEAD  | sanctum/csrf-cookie      |                   | Laravel\Sanctum\Http\Controllers\CsrfCookieController@show | web                                      |
+|        | GET|HEAD  | {any?}                   |                   | Closure                                                    | web                                      |
++--------+-----------+--------------------------+-------------------+------------------------------------------------------------+------------------------------------------+
